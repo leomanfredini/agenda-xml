@@ -2,4 +2,4 @@
 
 Sistema de Agenda desenvolvido em PHP, SimpleDOM, JQuery e Bootstrap. 
 
-Não utiliza banco de dados. Tudo é gravado um arquivo .xml. 
+Não utiliza banco de dados. Tudo é gravado em um único arquivo .xml. 
