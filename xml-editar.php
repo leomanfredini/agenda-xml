@@ -56,7 +56,7 @@ $result = $xml->xpath("dados[@id=$id_xml]");
 				</div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input type='submit' value='ATUALIZAR' class='btn btn-primary' id='btnAtualizar'>
+                        <input type='submit' value='ATUALIZAR' class='btn btn-success' id='btnAtualizar'>
                         <button type="button" class='btn btn-default' id='btnCancelar'>CANCELAR</button>
                     </div>
                 </div>
