@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contatos</title>
+    <title>Agenda de Contatos</title>
 
     <!-- Bootstrap -->
     <link href="assets/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 <body>
 
     <div class="container">
-        <h1>CONTATOS</h1>
+        <h1><span class="glyphicon glyphicon-paperclip"></span> AGENDA DE CONTATOS</h1>
         
     
         <hr />
@@ -58,32 +58,7 @@
     <!-- bootstrap -->
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
-    <script type="text/javascript">
-        $(function () {
-            $("#linkExcluir").click(function (e) {
-
-                var $modal = $('#modalExclusao');
-                parent = $(this).closest('tr');
-                $modal.data("parent", parent);
-                $modal.modal('show');
-
-                $modal.find("#btnExcluir").on('click', function(){
-                    var parent = $modal.data("parent");
-
-                    $modal.modal('hide');
-
-                    parent.fadeOut(400, function () {
-                        parent.remove();
-                    });
-                    var href = $("#linkExcluir").attr("href");
-                    window.location.href = href;
-                });
-
-                // prevenindo clique no link
-                e.preventDefault();
-            });
-        });
-    </script>
+    
 
 </body>
 </html>

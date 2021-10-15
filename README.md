@@ -1,5 +1,11 @@
 # Agenda de contatos em XML
 
-Sistema de Agenda desenvolvido em PHP, SimpleDOM, JQuery e Bootstrap. 
+Agenda de contatos desenvolvida em PHP, SimpleDOM, JQuery e Bootstrap. 
 
-Não utiliza banco de dados. Tudo é gravado em um único arquivo .xml. 
+Não utiliza banco de dados. Tudo é gravado em um único arquivo xml.
+
+*Fork do projeto original https://github.com/linhadecomando/xml-agenda-eletronica*
+
+## To-Do
+- [x] Área administrativa
+- [ ] Login na área administrativa

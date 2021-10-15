@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda>
+  <dados id="1" nome="Leonardo Manfredini" ramal="319" tel="(54) 8888-8888" cel="(54) 7777-7777" setor="Tecnologia da Informação" secretaria="Finanças" email=""/>
+  <dados id="2" nome="Hiassana Figueiredo" ramal="179" tel="(54) 7787-8787" cel="" setor="Tecnologia da Informação" secretaria="Gestão"/>
+  <dados id="4" nome="Jeremias Formolo" ramal="125" tel="(54) 9999-9999" cel="(54) 7777-7777" setor="SIG" secretaria="Planejamento"/>
+  <dados id="5" nome="Cristiano" ramal="183" tel="(54) 6666-6666" cel="(87) 7777-7777" setor="Transporte Escolar" secretaria="Educação"/>
+  <dados id="6" nome="Patricia" ramal="319" tel="(54) 8888-8888" cel="(54) 7777-7777" setor="TI" secretaria="Saúde"/>
+</agenda>

@@ -7,6 +7,7 @@
         <div class="form-group">
             <select name="opc" class="form-control">
                 <option value="nome"<?=$opc == "nome" ? " selected=\"selected\"" : ""?>>Nome</option>
+                <option value="setor"<?=$opc == "setor" ? " selected=\"selected\"" : ""?>>Setor</option>
                 <option value="secretaria"<?=$opc == "secretaria" ? " selected=\"selected\"" : ""?>>Secretaria</option>                
             </select>
         </div>
@@ -24,12 +25,12 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    
                     <th><a href="index.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@nome&by=<?=$byC?>">Nome</a></th>
                     <th>Ramal</th>
 					<th>Telefone</th>
                     <th>Celular</th>
-                    <th>E-mail</a></th>                    
+                    <th><a href="index.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@setor&by=<?=$byC?>">Setor</a></th>                    
 					<th><a href="index.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@secretaria&by=<?=$byC?>">Secretaria</a></th>
                 </tr>
             </thead>
@@ -40,12 +41,12 @@
 	        ?>
             <tbody>
                 <tr>
-                    <td><?=$dados["id"]?></td>
+                    
                     <td><?=$dados["nome"]?></td>
 					<td><?=$dados["ramal"]?></td>
                     <td><?=$dados["tel"]?></td>
                     <td><?=$dados["cel"]?></td>
-                    <td><?=$dados["email"]?></td>
+                    <td><?=$dados["setor"]?></td>
 					<td><?=$dados["secretaria"]?></td>
                 </tr>
             </tbody>

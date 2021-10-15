@@ -3,19 +3,19 @@
         <h3><span class="glyphicon glyphicon-plus"></span> ADICIONAR CONTATO</h3>
     </div>
     <div class="panel-body">
-        <form name="frmAdicionar" method="post" action="index-admin.php?action=add" class="form-horizontal">
+        <form name="frmAdicionar" method="post" action="index.php?action=add" class="form-horizontal">
             <input type="hidden" name="submit" value="1">
 
             <div class="form-group">
                 <label for="inputNome" class="col-sm-2 control-label">Nome:*</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputNome" name='inputNome' placeholder="nome completo" required>
+                    <input type="text" class="form-control" id="inputNome" name='inputNome' placeholder="nome completo" maxlength="40" required>
                 </div>
             </div>
 			<div class="form-group">
                 <label for="inputNome" class="col-sm-2 control-label">Ramal:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputRamal" name='inputRamal' placeholder="ramal">
+                    <input type="text" class="form-control" id="inputRamal" name='inputRamal' placeholder="ramal" maxlength="4">
                 </div>
             </div>
             <div class="form-group">
@@ -27,23 +27,29 @@
             <div class="form-group">
                 <label for="inputCel" class="col-sm-2 control-label">Celular:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control mask-phone" id="inputCel" name='inputCel' placeholder="celular">
+                    <input type="text" class="form-control mask-celular" id="inputCel" name='inputCel' placeholder="celular">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputNome" class="col-sm-2 control-label">E-mail:</label>
+                <label for="inputSetor" class="col-sm-2 control-label">Setor:</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail" name='inputEmail' placeholder="e-mail">
+                    <input type="text" class="form-control" id="inputSetor" name='inputSetor' placeholder="setor" maxlength="30">
                 </div>
             </div>
             <div class="form-group">
 			  <label for="inputSecretaria" class="col-sm-2 control-label">Secretaria:</label>
 			  <div class="col-sm-10">
-				  <select class="form-control" id="inputSecretaria" name="inputSecretaria">
-					<option>Gestão</option>
-					<option>Gabinete</option>
-					<option>Finanças</option>
-					<option>Saúde</option>
+				  <select class="form-control" id="inputSecretaria" name="inputSecretaria">					
+                    <option>Agricultura</option>
+                    <option>Des. Econ&ocirc;mico</option>
+                    <option>Educa&ccedil;&atilde;o</option>
+					<option>Finan&ccedil;as</option>
+                    <option>Gabinete</option>
+					<option>Gest&atilde;o</option>
+					<option>Habita&ccedil;&atilde;o</option>
+                    <option>Obras</option>                                      
+                    <option>Planejamento</option>
+                    <option>Sa&uacute;de</option>
 				  </select>
 			   </div>
 			</div>
@@ -75,7 +81,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 1)
 	$ramal	= $_POST["inputRamal"];
     $tel	= $_POST["inputTel"];
     $cel	= !empty($_POST["inputCel"]) ? $_POST["inputCel"] : "";
-    $email	= $_POST["inputEmail"];
+    $setor	= $_POST["inputSetor"];
     $secretaria	= $_POST["inputSecretaria"];
 
     // criando um novo nó com seus atributos
@@ -85,15 +91,15 @@ if (isset($_POST['submit']) && $_POST['submit'] == 1)
 	$dados->addAttribute('ramal', $ramal);
     $dados->addAttribute('tel', $tel);
     $dados->addAttribute('cel', $cel);
-    $dados->addAttribute('email', $email);
+    $dados->addAttribute('setor', $setor);
     $dados->addAttribute('secretaria', $secretaria);
 
     // inserindo os dados no arquivo xml
-    file_put_contents( 'agenda.xml', $xml->asPrettyXML() );
+    file_put_contents( $arquivoXML, $xml->asPrettyXML() );
     ?>
     <div class="alert alert-success"><strong>Sucesso!</strong> Dados inseridos corretamente.</div>
     <!--// refresh para retornar a página principal -->
-    <meta HTTP-EQUIV='refresh' CONTENT='<?=$tempo?>;URL=index-admin.php'>
+    <meta HTTP-EQUIV='refresh' CONTENT='<?=$tempo?>;URL=index.php'>
     <?php
 }
 ?>

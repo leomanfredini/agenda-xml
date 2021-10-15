@@ -13,8 +13,8 @@
 	}
 	
 	// atualizando arquivo xml
-	file_put_contents( 'agenda.xml', $xml->asPrettyXML() );
+	file_put_contents( $arquivoXML, $xml->asPrettyXML() );
 	?>
 	<div class="alert alert-success"><strong>Sucesso!</strong> Registro removido corretamente.</div>
 	<!--// refresh para retornar a página principal -->
-	<meta HTTP-EQUIV='refresh' CONTENT='<?=$tempo?>;URL=index-admin.php'>
+	<meta HTTP-EQUIV='refresh' CONTENT='<?=$tempo?>;URL=index.php'>

@@ -4,10 +4,11 @@
 	?>
     <!-- <h2><span class="glyphicon glyphicon-phone"></span> CONTATOS CADASTRADOS</h2> -->
     <hr />
-    <form class="form-inline" action="index-admin.php" name="frmBuscar" method="get">
+    <form class="form-inline" action="index.php" name="frmBuscar" method="get">
         <div class="form-group">
             <select name="opc" class="form-control">
                 <option value="nome"<?=$opc == "nome" ? " selected=\"selected\"" : ""?>>Nome</option>
+                <option value="setor"<?=$opc == "setor" ? " selected=\"selected\"" : ""?>>Setor</option>
                 <option value="secretaria"<?=$opc == "secretaria" ? " selected=\"selected\"" : ""?>>Secretaria</option>
             </select>
         </div>
@@ -26,11 +27,11 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th><a href="index-admin.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@nome&by=<?=$byC?>">Nome</a></th>
+                    <th><a href="index.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@nome&by=<?=$byC?>">Nome</a></th>
 					<th>Ramal</th>
                     <th>Telefone</th>
-                    <th>Celular</th>
-                    <th>E-mail</a></th>
+                    <th>Celular</th>                    
+                    <th><a href="index.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@setor&by=<?=$byC?>">Setor</a></th>
 					<th><a href="index.php?opc=<?=$opc?>&buscar=<?=$buscar?>&id=<?=$id?>&action=buscar&order=@secretaria&by=<?=$byC?>">Secretaria</a></th>
                     <th>Editar</th>
                     <th>Excluir</th>
@@ -48,15 +49,15 @@
 					<td><?=$dados["ramal"]?></td>
                     <td><?=$dados["tel"]?></td>
                     <td><?=$dados["cel"]?></td>
-                    <td><?=$dados["email"]?></td>
+                    <td><?=$dados["setor"]?></td>
 					<td><?=$dados["secretaria"]?></td>
                     <td align="center">
-                        <a href="index-admin.php?action=edt&id=<?=$dados["id"]?>" id="btnEditar">
+                        <a href="index.php?action=edt&id=<?=$dados["id"]?>" id="btnEditar">
                             <span class="glyphicon glyphicon-edit"></span>
                         </a>
                     </td>
                     <td align="center">
-                        <a href="index-admin.php?action=del&id=<?=$dados["id"]?>" id="linkExcluir">
+                        <a href="index.php?action=del&id=<?=$dados["id"]?>" id="linkExcluir">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
                     </td>
