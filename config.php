@@ -15,4 +15,7 @@
 
 	// definindo o tempo EM SEGUNDOS para recarregamento da página index.php
 	$tempo = 4;
+
+	// senha para acesso à area administrativa
+	$senhaAdmin = 'admin';
 ?>

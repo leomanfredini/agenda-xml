@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<agenda/>
+<agenda>
+  <dados id="1" nome="Fulano de Tal" ramal="123" tel="(99) 4321-9876" cel="(99) 99999-9999" setor="Tecnologia da Informação" secretaria="Gabinete"/>
+  <dados id="2" nome="Ciclano de Tal" ramal="134" tel="(99) 9876-1234" cel="(99) 98769-8768" setor="Recursos Humanos" secretaria="Gestão"/>
+  <dados id="3" nome="Ciclano de Tal" ramal="145" tel="(99) 3232-5454" cel="(99) 91234-5678" setor="Engenharia" secretaria="Planejamento"/>
+</agenda>

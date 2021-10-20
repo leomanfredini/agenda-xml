@@ -10,7 +10,27 @@
 	$byC	= ($by == "d") ? "a" : "d";
 
     $action = isset($_GET['action']) ? $_GET['action'] : "";
+
+
+
+    session_start();
+
+    $_POST['senha'] = ( isset($_POST['senha']) ) ? $_POST['senha'] : null;
+
+    if($_POST['senha'] == $senhaAdmin)
+    {
+        $_SESSION['login'] = $_POST['senha'];
+    }
+
+    if((!isset ($_SESSION['login']) == true))
+    {
+    unset($_SESSION['login']);  
+    header('location:login.php');
+    } 
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +54,13 @@
 <body>
 
     <div class="container">
-        <h1><span class="glyphicon glyphicon-paperclip"></span> AGENDA DE CONTATOS - ADMINISTRAÇÃO</h1>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+                <h1><span class="glyphicon glyphicon-paperclip"></span> AGENDA DE CONTATOS - ADMINISTRAÇÃO</h1>
+            </div>
+            
+        </div>
+        
         
     
         <hr />
@@ -42,10 +68,10 @@
         <div class="row justify-content-md-center">
             <div class="col-md-2">
 				<?php if (empty($action)){ ?>
-                    <a href="index.php?action=add" class="btn btn-danger"><span class="glyphicon glyphicon-plus"></span> NOVO CONTATO</a>
+                    <a href="index.php?action=add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> NOVO CONTATO</a>
                 <?php } ?>
 			</div>
-			<div class="col col-md-8">    
+			<div class="col col-md-9">    
                 
     
                 <?php
@@ -63,12 +89,16 @@
                             // editando
                             include ('xml-editar.php');
                             break;
+                        case "logout":
+                            // saindo
+                            include ('logout.php');
+                            break;
                     }
                 }
                 ?>
             </div>
-			<div class="col col-md-2">
-				
+			<div class="col col-md-1">
+                <a href="index.php?action=logout" class="btn btn-danger"><span class="glyphicon glyphicon-log-out"></span> SAIR</a> 
 			</div>
     
           

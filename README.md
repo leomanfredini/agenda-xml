@@ -8,4 +8,4 @@ Não utiliza banco de dados. Tudo é gravado em um único arquivo xml.
 
 ## To-Do
 - [x] Área administrativa
-- [ ] Proteção por senha na área administrativa
+- [x] Proteção por senha na área administrativa
